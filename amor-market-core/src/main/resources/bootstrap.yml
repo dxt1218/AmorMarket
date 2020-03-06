@@ -1,0 +1,25 @@
+# bootstrap.yml作用：
+# application.yml是为了项目运行做支持   而bootstrap.yml 是在项目加载前
+server:
+  port: 9901
+spring:
+  application:
+    name: amor-market-core #服务名  在注册中心
+  cloud:
+    config:
+      discovery: #通过服务发现 找到 config服务中心
+        enabled: true
+        service-id: amor-config-server
+      name: application-mysql,application-mysql-plus #配置文件名
+      fail-fast: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} #配置instanceId显示ip和端口
+  client:
+    serviceUrl:
+      defaultZone: http://49.234.76.112:7766/eureka/
+  # platform-provider: #变更 的服务提供者的 name名
+    # ribbon:
+    # NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #固定写法加 所需要的 变更负载规格 地址
