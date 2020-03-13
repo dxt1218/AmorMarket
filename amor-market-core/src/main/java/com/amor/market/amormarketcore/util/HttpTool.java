@@ -117,8 +117,8 @@ public class HttpTool {
             if (response != null && response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 /**读取服务器返回过来的json字符串数据**/
                 String strResult = EntityUtils.toString(response.getEntity(), "UTF-8");
-                jsonStr = StringEscapeUtils.unescapeJava(strResult);
-                //return  JSONObject.parseObject(strResult).toString();//也能转码
+                //jsonStr = StringEscapeUtils.unescapeJava(strResult);
+                jsonStr =JSONObject.parseObject(strResult).toString();//也能转码
             } else {
                 log.error("请求状态非正常  当前状态码：" + response.getStatusLine());
             }
@@ -168,8 +168,8 @@ public class HttpTool {
             if (response != null && response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 /**读取服务器返回过来的json字符串数据**/
                 String strResult = EntityUtils.toString(response.getEntity(), "UTF-8");
-                jsonStr = StringEscapeUtils.unescapeJava(strResult);
-                //return  JSONObject.parseObject(strResult).toString();//也能转码
+                //jsonStr = StringEscapeUtils.unescapeJava(strResult);
+                jsonStr = JSONObject.parseObject(strResult).toString();//也能转码
             } else {
                 log.error("请求状态非正常  当前状态码：" + response.getStatusLine());
             }
@@ -249,8 +249,8 @@ public class HttpTool {
             if (state == HttpStatus.SC_OK) {
                 HttpEntity responseEntity =  response.getEntity();
                 String strResult = EntityUtils.toString(responseEntity, "UTF-8");
-                jsonStr = StringEscapeUtils.unescapeJava(strResult);
-                //return  JSONObject.parseObject(strResult).toString();//也能转码
+                //jsonStr = StringEscapeUtils.unescapeJava(strResult);
+                jsonStr = JSONObject.parseObject(strResult).toString();//也能转码
             } else {
                 log.error("请求状态非正常  当前状态码：" + response.getStatusLine());
             }

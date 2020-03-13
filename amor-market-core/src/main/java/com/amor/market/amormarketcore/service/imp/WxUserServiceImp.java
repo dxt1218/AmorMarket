@@ -1,7 +1,9 @@
 package com.amor.market.amormarketcore.service.imp;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.amor.market.amormarketcore.bean.ResHelper;
+import com.amor.market.amormarketcore.bean.dto.UserRegister;
 import com.amor.market.amormarketcore.constant.Wx;
 import com.amor.market.amormarketcore.constant.WxApi;
 import com.amor.market.amormarketcore.service.WxUserService;
@@ -27,5 +29,11 @@ public class WxUserServiceImp implements WxUserService {
         log.info("获取用户openId响应：{}", Jscode2session);
 
         return ResHelper.ok(Jscode2session);
+    }
+
+    @Override
+    public ResHelper userRegister(UserRegister userRegister) {
+
+        return null;
     }
 }

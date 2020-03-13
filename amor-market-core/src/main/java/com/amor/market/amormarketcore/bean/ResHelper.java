@@ -5,24 +5,24 @@ package com.amor.market.amormarketcore.bean;
  */
 public class ResHelper<T> {
     /**
-     * 服务器响应数据
+     * 状态码
      */
-    private T payload;
-
+    private Integer code = 0000;
     /**
      * 请求是否成功
      */
     private boolean success;
+    /**
+     * 服务器响应数据
+     */
+    private T data;
+
 
     /**
      * 错误信息
      */
     private String msg;
 
-    /**
-     * 状态码
-     */
-    private int code = -1;
 
     /**
      * 服务器响应时间
@@ -38,16 +38,16 @@ public class ResHelper<T> {
         this.success = success;
     }
 
-    public ResHelper(boolean success, T payload) {
+    public ResHelper(boolean success, T data) {
         this.timestamp = System.currentTimeMillis() / 1000;
         this.success = success;
-        this.payload = payload;
+        this.data = data;
     }
 
-    public ResHelper(boolean success, T payload, int code) {
+    public ResHelper(boolean success, T data, int code) {
         this.timestamp = System.currentTimeMillis() / 1000;
         this.success = success;
-        this.payload = payload;
+        this.data = data;
         this.code = code;
     }
 
@@ -64,12 +64,12 @@ public class ResHelper<T> {
         this.code = code;
     }
 
-    public T getPayload() {
-        return payload;
+    public T getData() {
+        return data;
     }
 
-    public void setPayload(T payload) {
-        this.payload = payload;
+    public void setData(T data) {
+        this.data = data;
     }
 
     public boolean isSuccess() {
@@ -108,8 +108,8 @@ public class ResHelper<T> {
         return new ResHelper(true);
     }
 
-    public static <T> ResHelper ok(T payload) {
-        return new ResHelper(true, payload);
+    public static <T> ResHelper ok(T data) {
+        return new ResHelper(true, data);
     }
 
     public static <T> ResHelper ok(int code) {
