@@ -28,7 +28,7 @@ public class WxUserBasicController {
 
     @ApiOperation(value = "注册刷新微信用户信息")
     @PostMapping("/user/register")
-    public ResHelper getUserRegister(UserRegister userRegister) {
+    public ResHelper getUserRegister(@RequestBody UserRegister userRegister) {
         log.info("注册刷新微信用户信息入参：{}",userRegister);
         return  wxUserService.userRegister (userRegister);
     }

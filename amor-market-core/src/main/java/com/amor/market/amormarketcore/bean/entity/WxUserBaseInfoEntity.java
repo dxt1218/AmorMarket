@@ -40,7 +40,7 @@ public class WxUserBaseInfoEntity extends Model<WxUserBaseInfoEntity> {
     private String state;
 
     @TableField("create_time")
-    private LocalDateTime create_time;
+    private LocalDateTime createTime;
 
     @TableField("update_time")
     private LocalDateTime updateTime;

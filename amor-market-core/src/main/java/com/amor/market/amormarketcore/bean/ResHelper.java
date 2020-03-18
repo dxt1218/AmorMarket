@@ -7,7 +7,7 @@ public class ResHelper<T> {
     /**
      * 状态码
      */
-    private Integer code = 0000;
+    private Integer code = 2002;
     /**
      * 请求是否成功
      */
@@ -111,6 +111,8 @@ public class ResHelper<T> {
     public static <T> ResHelper ok(T data) {
         return new ResHelper(true, data);
     }
+
+
 
     public static <T> ResHelper ok(int code) {
         return new ResHelper(true, null, code);
