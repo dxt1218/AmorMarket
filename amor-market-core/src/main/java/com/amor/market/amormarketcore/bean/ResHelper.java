@@ -104,21 +104,21 @@ public class ResHelper<T> {
         this.timestamp = timestamp;
     }
 
-    public static ResHelper ok() {
+    public static ResHelper success() {
         return new ResHelper(true);
     }
 
-    public static <T> ResHelper ok(T data) {
+    public static <T> ResHelper success(T data) {
         return new ResHelper(true, data);
     }
 
 
 
-    public static <T> ResHelper ok(int code) {
+    public static <T> ResHelper success(int code) {
         return new ResHelper(true, null, code);
     }
 
-    public static <T> ResHelper ok(T payload, int code) {
+    public static <T> ResHelper success(T payload, int code) {
         return new ResHelper(true, payload, code);
     }
 

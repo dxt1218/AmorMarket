@@ -38,7 +38,7 @@ public class WxUserServiceImp  implements WxUserService {
         String Jscode2session = HttpTool.nGet(WxApi.getUrl(WxApi.Jscode2session), map);
         log.info("获取用户openId响应：{}", Jscode2session);
 
-        return ResHelper.ok(Jscode2session);
+        return ResHelper.success(Jscode2session);
     }
 
     @Override
@@ -54,9 +54,9 @@ public class WxUserServiceImp  implements WxUserService {
             wxUserBaseInfoMapper.insert(entity);
             String  userId = entity.getUserId();
             log.info("用户id" + userId);
-            return ResHelper.ok(userId);
+            return ResHelper.success(userId);
         }
 
-        return ResHelper.ok(entity.getUserId());
+        return ResHelper.success(entity.getUserId());
     }
 }

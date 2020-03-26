@@ -1,7 +1,9 @@
 package com.amor.market.amormarketcore.controller;
 
 import com.amor.market.amormarketcore.bean.ResHelper;
+import com.amor.market.amormarketcore.bean.dto.HomePageDTO;
 import com.amor.market.amormarketcore.bean.dto.UserRegister;
+import com.amor.market.amormarketcore.service.HomePageService;
 import com.amor.market.amormarketcore.service.WxUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,11 +19,15 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class HomePageController {
 
+    @Autowired
+    HomePageService homePageService;
 
     @ApiOperation(value = "首页")
-    @PostMapping("/page/info")
-    public ResHelper homePage(@RequestHeader("userId") String userId) {
-        return  null;
+    @GetMapping("/page/info")
+    public ResHelper<HomePageDTO> homePage() {
+
+        //log.info("用户编号 ：{}",userId);
+        return  homePageService.HomePage();
     }
 
 }
