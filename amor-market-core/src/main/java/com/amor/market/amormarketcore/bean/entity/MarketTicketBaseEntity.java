@@ -56,6 +56,10 @@ public class MarketTicketBaseEntity extends Model<MarketTicketBaseEntity> {
     @ApiModelProperty("排序字段")
     private String orderNum;//
 
+    @TableField("tic_pic")
+    @ApiModelProperty("图片")
+    private String ticPic;//
+
 
     @TableField("priv_flag")
     @ApiModelProperty("私有标识 0共有 1私有")

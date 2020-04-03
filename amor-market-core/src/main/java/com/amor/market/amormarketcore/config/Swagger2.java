@@ -28,8 +28,8 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
-                .description("简单优雅的restfun风格，")
+                .title("Amor Market Api文档")
+                .description("接口明细")
                 .termsOfServiceUrl("")
                 .version("1.0")
                 .build();

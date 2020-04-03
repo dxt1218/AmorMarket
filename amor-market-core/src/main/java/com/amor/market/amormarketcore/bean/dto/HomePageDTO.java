@@ -13,4 +13,5 @@ public class HomePageDTO {
 
     @ApiModelProperty("通用卷列表")
     private  List<MarketTicketBaseEntity> tikList;
+
 }
